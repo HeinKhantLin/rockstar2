@@ -1,11 +1,14 @@
 import React from 'react';
 
-class Item extends React.Component{
-  render(){
-    return(
-      <li>{this.props.name}</li>
-    );
-  }
+const Item = props => {
+	return(
+	  <li>
+        {props.name}
+        <button onClick={() => {
+           props.remove( props.name )
+        }}>&times;</button>
+      </li>
+	)
 }
 
 export default Item;
